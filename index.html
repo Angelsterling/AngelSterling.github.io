@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angel Sterling — Freelance Copywriter</title>
+<meta name="description" content="Freelance copywriter for web design agencies. Website copy, email sequences, and bilingual (EN/ES) content built to drop straight into client builds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #F5F2EA;
+    --paper-dim: #EDE9DE;
+    --ink: #1C2333;
+    --ink-soft: #4A5064;
+    --navy: #1C2333;
+    --navy-2: #262E42;
+    --gold: #A8792A;
+    --gold-bright: #C79A3E;
+    --oxblood: #7A2E2E;
+    --rule: rgba(28,35,51,0.14);
+    --rule-light: rgba(245,242,234,0.18);
+    --max: 920px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;} }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  .label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--gold-bright);
+    outline-offset:3px;
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(245,242,234,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--rule);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 28px;
+    max-width:var(--max);
+  }
+  .brand{font-family:'Fraunces', serif; font-weight:600; font-size:1.05rem;}
+  .brand span{color:var(--gold);}
+  nav ul{list-style:none; display:flex; gap:28px; margin:0; padding:0;}
+  nav a{text-decoration:none; font-size:0.92rem; color:var(--ink-soft); padding:10px 2px; display:inline-block;}
+  nav a:hover{color:var(--ink);}
+  .navlinks{display:flex;}
+  @media (max-width:640px){ .navlinks{display:none;} }
+
+  /* ---------- HERO ---------- */
+  header.hero{padding:104px 0 88px; position:relative;}
+  .hero .label{display:block; margin-bottom:22px;}
+  .hero h1{
+    font-size:clamp(2.4rem, 6vw, 4.2rem);
+    line-height:1.05;
+    max-width:11ch;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--gold);
+  }
+  .hero p.sub{
+    max-width:52ch;
+    margin-top:26px;
+    font-size:1.15rem;
+    color:var(--ink-soft);
+  }
+  .hero-cta{
+    margin-top:38px;
+    display:flex; gap:16px; flex-wrap:wrap;
+  }
+  .btn{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.9rem;
+    letter-spacing:0.05em;
+    text-decoration:none;
+    padding:14px 24px;
+    border-radius:2px;
+    display:inline-block;
+    transition:transform 0.15s ease, background 0.15s ease;
+  }
+  .btn-primary{background:var(--ink); color:var(--paper);}
+  .btn-primary:hover{background:var(--gold); transform:translateY(-1px);}
+  .btn-ghost{border:1px solid var(--ink); color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--gold); color:var(--gold);}
+
+  /* dividing rule with tick */
+  .rule{
+    border:none; height:1px; background:var(--rule); margin:0;
+  }
+  .section{padding:76px 0;}
+  .section-head{
+    display:flex; align-items:baseline; gap:14px; margin-bottom:14px;
+  }
+  .section-head h2{font-size:clamp(1.6rem,3.4vw,2.2rem);}
+  .section-intro{max-width:60ch; color:var(--ink-soft); margin-bottom:48px;}
+  .es-signpost{
+    display:inline-block; margin-top:6px;
+    font-size:0.78rem; font-family:'JetBrains Mono', monospace;
+    color:var(--gold); text-decoration:none; border-bottom:1px solid var(--gold);
+  }
+  .es-signpost:hover{color:var(--oxblood); border-color:var(--oxblood);}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid; grid-template-columns: 1.1fr 0.9fr; gap:56px; align-items:start;
+  }
+  @media (max-width:760px){ .about-grid{grid-template-columns:1fr;} }
+  .about-grid p{margin:0 0 18px; color:var(--ink-soft);}
+  .about-grid p strong{color:var(--ink); font-weight:600;}
+  .fact-list{list-style:none; margin:38px 0 0; padding:0; border-top:1px solid var(--rule);}
+  .fact-list li{
+    display:flex; justify-content:space-between; gap:16px;
+    padding:14px 0; border-bottom:1px solid var(--rule);
+    font-size:0.95rem;
+  }
+  .fact-list li span:first-child{color:var(--ink-soft);}
+  .fact-list li span:last-child{font-family:'JetBrains Mono', monospace; font-size:0.85rem; text-align:right;}
+
+  /* ---------- WORK SAMPLES ---------- */
+  .sample{
+    border-top:1px solid var(--rule);
+    padding:40px 0;
+  }
+  .sample:last-child{border-bottom:1px solid var(--rule);}
+  .sample-head{
+    display:flex; justify-content:space-between; align-items:flex-start; gap:20px; cursor:pointer;
+  }
+  .sample-head-left{flex:1;}
+  .sample-tag{margin-bottom:10px;}
+  .sample-head h3{font-size:1.4rem; margin-bottom:8px;}
+  .sample-head p{margin:0; color:var(--ink-soft); font-size:0.98rem; max-width:56ch;}
+  .toggle-icon{
+    font-family:'JetBrains Mono', monospace;
+    font-size:1.3rem; color:var(--gold);
+    flex-shrink:0; width:28px; text-align:center;
+    transition:transform 0.25s ease;
+    user-select:none;
+  }
+  .sample[data-open="true"] .toggle-icon{transform:rotate(45deg);}
+
+  .sample-body{
+    max-height:0; overflow:hidden;
+    transition:max-height 0.4s ease;
+  }
+  .sample-inner{
+    display:grid; grid-template-columns: 1fr 240px; gap:36px;
+    padding-top:28px;
+  }
+  @media (max-width:760px){ .sample-inner{grid-template-columns:1fr;} }
+
+  .copy-block{
+    background:#fff;
+    border:1px solid var(--rule);
+    padding:28px 30px;
+    font-size:0.98rem;
+    position:relative;
+  }
+  .copy-sample-btn{
+    position:absolute; top:14px; right:14px;
+    font-family:'JetBrains Mono', monospace; font-size:0.72rem;
+    padding:6px 12px; border:1px solid var(--rule); border-radius:2px;
+    background:var(--paper); color:var(--ink-soft); cursor:pointer;
+  }
+  .copy-sample-btn:hover{border-color:var(--gold); color:var(--gold);}
+  .copy-block h4{font-family:'Fraunces',serif; font-size:1.15rem; font-weight:600; margin:0 0 12px;}
+  .copy-block p{margin:0 0 14px; color:var(--ink);}
+  .copy-block p:last-child{margin-bottom:0;}
+  .copy-block .cta-line{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.9rem;
+    color:var(--oxblood);
+    margin-top:16px;
+  }
+  .lang-toggle{
+    display:inline-flex; gap:2px; margin-bottom:16px;
+    border:1px solid var(--rule); border-radius:2px; overflow:hidden;
+  }
+  .lang-toggle button{
+    font-family:'JetBrains Mono', monospace; font-size:0.75rem;
+    padding:6px 12px; border:none; background:var(--paper-dim); cursor:pointer;
+    color:var(--ink-soft);
+  }
+  .lang-toggle button.active{background:var(--ink); color:var(--paper);}
+
+  .annotation{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.8rem;
+    line-height:1.55;
+    color:var(--gold);
+    padding-left:18px;
+    border-left:2px solid var(--gold);
+    align-self:start;
+    position:relative;
+  }
+  .annotation::before{
+    content:"NOTE";
+    display:block;
+    color:var(--oxblood);
+    font-size:0.68rem;
+    letter-spacing:0.1em;
+    margin-bottom:8px;
+  }
+
+  /* ---------- SERVICES ---------- */
+  .services-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:2px;
+    background:var(--rule);
+    border:1px solid var(--rule);
+  }
+  @media (max-width:700px){ .services-grid{grid-template-columns:1fr;} }
+  .service-card{background:var(--paper); padding:28px 26px;}
+  .service-card .label{display:block; margin-bottom:14px;}
+  .service-card h3{font-size:1.15rem; margin-bottom:10px;}
+  .service-card p{margin:0; color:var(--ink-soft); font-size:0.92rem;}
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  footer{background:var(--navy); color:var(--paper); padding:80px 0 40px;}
+  footer .label{color:var(--gold-bright);}
+  footer h2{color:var(--paper); font-size:clamp(1.8rem,4vw,2.8rem); max-width:14ch; margin-top:18px;}
+  footer p{color:rgba(245,242,234,0.72); max-width:48ch; margin-top:20px;}
+  .contact-links{margin-top:36px; display:flex; flex-wrap:wrap; gap:14px;}
+  footer .btn-primary{background:var(--gold); color:var(--navy);}
+  footer .btn-primary:hover{background:var(--gold-bright);}
+  footer .btn-ghost{border-color:rgba(245,242,234,0.4); color:var(--paper);}
+  footer .btn-ghost:hover{border-color:var(--gold-bright); color:var(--gold-bright);}
+  .footer-bottom{
+    margin-top:64px; padding-top:24px; border-top:1px solid var(--rule-light);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    font-size:0.9rem; color:rgba(245,242,234,0.5);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Angel Sterling <span>/ copy</span></div>
+    <ul class="navlinks">
+      <li><a href="#work">My Writing</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#" id="about-modal-trigger" onclick="openAboutModal(event)">About Angel</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="label">Freelance Copywriter — Est. 2026</span>
+    <h1>Words your <em>designs</em> deserve.</h1>
+    <p class="sub">I write website copy, email sequences, and bilingual (EN/ES) content for the clients web design agencies build for — so your team can stay focused on design, not drafts.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#work">See My Samples</a>
+      <a class="btn btn-ghost" href="#contact">Contact Me</a>
+    </div>
+  </div>
+</header>
+
+<section style="background:var(--navy); padding:36px 0;">
+  <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;">
+    <div>
+      <span class="label" style="color:var(--gold-bright);">About Angel</span>
+      <h3 style="color:var(--paper); font-size:1.4rem; margin-top:8px;">I write the copy so you don't have to chase it.</h3>
+      <p style="color:rgba(245,242,234,0.7); margin-top:6px; font-size:0.95rem;">Currently available — actively taking on new client work, one-off or ongoing.</p>
+    </div>
+    <div style="display:flex; gap:12px; flex-wrap:wrap;">
+      <a class="btn btn-ghost" style="border-color:var(--gold); color:var(--paper);" href="#" onclick="openAboutModal(event)">Read My Story</a>
+      <a class="btn btn-primary" style="background:var(--gold); color:var(--navy);" href="#contact">Hire Me</a>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head"><span class="label">01 — How I Can Help</span></div>
+    <h2 style="margin-bottom:44px;">Built to plug into an agency workflow.</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="label">Website Copy</span>
+        <h3>Homepage &amp; Service Pages</h3>
+        <p>Structured with clear headings, ready to drop into Webflow, WordPress, or a static build — no rewrite needed.</p>
+      </div>
+      <div class="service-card">
+        <span class="label">Email</span>
+        <h3>Nurture Sequences</h3>
+        <p>Multi-email flows timed to how a reader's doubts actually change over days, not just one pitch repeated.</p>
+      </div>
+      <div class="service-card">
+        <span class="label">Bilingual</span>
+        <h3>English / Español</h3>
+        <p>Full native-parity copy in English and Español — for clients serving bilingual communities or markets.</p>
+      </div>
+      <div class="service-card">
+        <span class="label">SEO Content</span>
+        <h3>Local Search-Ready Copy</h3>
+        <p>Keyword-rich headings for each service, neighborhood and city-specific mentions, and FAQ sections structured to match how people actually search.</p>
+      </div>
+      <div class="service-card">
+        <span class="label">Brand Messaging</span>
+        <h3>About Pages &amp; Founder Stories</h3>
+        <p>Trust built through specificity, not a generic bio — real detail and a real voice behind the business.</p>
+      </div>
+      <div class="service-card">
+        <span class="label">Full-Site Copywriting</span>
+        <h3>Beyond the Homepage</h3>
+        <p>Homepage, service pages, FAQ, and service-area content written together as one consistent site.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-head"><span class="label">02 — My Writing</span></div>
+    <h2 style="margin-bottom:6px; font-family:'Inter', sans-serif; font-weight:600; letter-spacing:-0.01em;">Six samples. Six different jobs the copy has to do.</h2>
+    <a href="#sample-deep-rubber" onclick="jumpToDeepRubber(event)" class="es-signpost">→ Includes Spanish-only work</a>
+    <p class="section-intro" style="margin-top:14px;">Click a sample to expand it. Each one includes a note on the specific technique doing the work — because good copy isn't luck, it's a decision at every line.</p>
+
+    <!-- SAMPLE 1 -->
+    <div class="sample" data-open="true">
+      <div class="sample-head" onclick="toggleSample(this)">
+        <div class="sample-head-left">
+          <span class="label sample-tag">1 · Home Services · Homepage + About Us</span>
+          <h3>Stillwater Noble Tree Care</h3>
+          <p>Tree service homepage and founder-driven about page — two jobs, two different techniques.</p>
+        </div>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="sample-body">
+        <div class="sample-inner">
+          <div class="copy-block">
+            <button class="copy-sample-btn" onclick="copySampleText(this)">Copy</button>
+            <div class="lang-toggle">
+              <button class="active" onclick="showVariant(this,'home')">Homepage</button>
+              <button onclick="showVariant(this,'about')">About Us</button>
+            </div>
+            <div class="variant-home">
+              <h4>Before You Spend Thousands Removing a Tree, Get a Professional Second Opinion</h4>
+              <p style="font-family:'JetBrains Mono', monospace; font-size:0.9rem; color:var(--ink-soft);">Professional Tree Service for Homes and Businesses Throughout Payne County — Free Estimates • Local Arborists • Fully Insured</p>
+              <p>Stillwater Noble Tree Care provides tree trimming, tree pruning, tree removal, crown thinning, and storm cleanup services throughout Stillwater and Payne County.</p>
+              <p>Many homeowners assume a problem tree needs to be removed. Sometimes that's true. But many trees can be safely preserved through professional pruning and corrective care—saving homeowners thousands of dollars while protecting the beauty and value of their property.</p>
+              <p>Our goal isn't to sell the biggest project possible. Our goal is to recommend the right solution. Whether you need routine maintenance, emergency storm cleanup, or complete tree removal, you'll receive honest recommendations, professional workmanship, and results you'll notice immediately.</p>
+
+              <h4 style="margin-top:20px;">What Your Property Looks Like After We Leave</h4>
+              <p>Most people don't realize how much their trees are hiding—until the work is done. It's not subtle. It's the kind of change your neighbors notice first.</p>
+              <p><strong>Your Lawn Turns Greener</strong> — Years of heavy shade can thin out grass. Once we open the canopy, sunlight reaches the ground again. Within weeks, bare patches often begin filling in.</p>
+              <p><strong>Your Home Feels Brighter Inside</strong> — Windows that stayed dark all morning suddenly let in light. Rooms feel larger. You may not need to turn on a lamp until late afternoon.</p>
+              <p><strong>Your View Comes Back</strong> — Whether you face a pond, a garden, or simply open sky, proper tree pruning restores the view. No more looking through a tangled mass of overgrown branches.</p>
+              <p><strong>Your Curb Appeal Improves</strong> — Healthy, well-shaped trees make a property look cared for and inviting. Step across the street after we finish and you'll notice the difference immediately.</p>
+
+              <h4 style="margin-top:20px;">Why Homeowners Choose Noble Tree Care</h4>
+              <p><strong>Most tree companies can cut down a tree. Far fewer know when a tree should be saved.</strong></p>
+              <p>Many homeowners call us after receiving recommendations for expensive tree removals. Sometimes removal is necessary. Sometimes a tree simply needs proper pruning, crown thinning, or corrective care. We've met homeowners who were told healthy trees needed removal. We've seen people spend money on unnecessary work because nobody took the time to explain their options.</p>
+              <p><strong>We believe tree care starts with honest advice. Our job isn't to sell the biggest project. Our job is to recommend the right solution for your property.</strong> That means giving honest advice, explaining your options, and helping you make an informed decision.</p>
+              <p>When you work with Noble Tree Care, you get: ISA-certified expertise, fully insured professionals, honest recommendations, clear communication from start to finish, respect for your property, thorough cleanup after every job, and safe, professional equipment and procedures.</p>
+              <p>If a tree can be saved, we'll tell you. If it needs to come down, we'll explain why. Either way, you'll know exactly what work is being performed and exactly what you're paying for.</p>
+
+              <h4 style="margin-top:20px;">Our Services</h4>
+              <p><strong>Tree Pruning</strong> — We remove dead, rubbing, weak, and damaged limbs while preserving the tree's natural shape. The result is a healthier, stronger, and more attractive tree.</p>
+              <p><strong>Crown Thinning</strong> — By selectively removing smaller interior branches, we improve airflow and sunlight penetration while reducing stress on the tree.</p>
+              <p><strong>Tree Removal</strong> — Some trees cannot be saved. When removal becomes necessary, we complete the job safely and efficiently, then grind the stump to leave you with usable yard space.</p>
+              <p><strong>Storm Cleanup</strong> — After severe weather, we quickly remove fallen trees, broken limbs, and debris to help restore safety and order to your property.</p>
+              <p><strong>Emergency Tree Service</strong> — Storm-damaged trees can create immediate hazards. We respond quickly to assess the situation, remove dangerous limbs, and help restore safety to your property.</p>
+
+              <h4 style="margin-top:20px;">Tree Removal Isn't Always the Answer</h4>
+              <p>One of the biggest misconceptions homeowners have is that every problem tree needs to be removed. In reality, many issues can be corrected through professional pruning, crown thinning, structural trimming, or targeted removal of damaged limbs. We've helped homeowners preserve beautiful mature trees while avoiding unnecessary removal costs.</p>
+              <p>That's why every project begins with an honest assessment and a recommendation based on what's best for the tree, the property, and the homeowner.</p>
+
+              <h4 style="margin-top:20px;">Meet the Crew</h4>
+              <p>We're a small, Stillwater-based crew with a strong focus on safety, professionalism, and quality workmanship. Our lead climber holds ISA certification and brings years of specialized tree care experience beyond basic landscaping services. We arrive on time, communicate clearly, and clean up thoroughly before leaving your property.</p>
+              <p>When you call, you'll speak directly with someone who works on the crew—not a call center or automated system. We believe professional tree care should feel professional from the first phone call to the final cleanup.</p>
+
+              <h4 style="margin-top:20px;">What Stillwater Neighbors Say</h4>
+              <p>"Our backyard was so cluttered with low-hanging branches and overgrowth that we barely spent time outside anymore. After Noble Tree Care finished pruning and thinning the canopy, the yard felt completely transformed. We have more sunlight, healthier grass, and a much better view." — Diane, Near Boomer Lake</p>
+              <p>"I was prepared to spend thousands removing a large oak tree because that's what another company recommended. Noble Tree Care took the time to inspect the tree and explain that it only needed professional pruning. The tree looks beautiful, and I saved a significant amount of money by getting an honest second opinion." — Mark, West Stillwater</p>
+              <p>"I had a very large tree damaged during a storm and was worried about it falling on my home. The crew arrived quickly, worked safely, and handled everything from removal to cleanup. When they finished, you could hardly tell a major tree project had taken place." — Carla, Near Oklahoma State University</p>
+
+              <h4 style="margin-top:20px;">Areas We Serve</h4>
+              <p>Oklahoma State University Area • Western Hills • The Lakes • Brookhaven • Westwood • North Country Club Area • Downtown Stillwater • Couch Park Neighborhood</p>
+              <p>Don't see your area listed? Give us a call. We proudly serve all of Payne County and surrounding communities.</p>
+
+              <h4 style="margin-top:20px;">Tree Problems We Commonly Solve</h4>
+              <p>Dead or broken limbs, branches hanging over roofs, storm-damaged trees, excessive shade, trees blocking views, trees growing too close to homes, leaning trees, overcrowded canopies, poor tree structure, dead or dying trees, and safety concerns after severe weather.</p>
+
+              <h4 style="margin-top:20px;">Common Questions From Homeowners</h4>
+              <p><strong>How Much Does Tree Pruning Cost in Stillwater?</strong> Most residential pruning projects range from $250 to $800 depending on tree size, condition, and accessibility. We provide free written estimates.</p>
+              <p><strong>Are You Licensed and Insured?</strong> Yes. We carry full liability insurance and workers' compensation coverage. Proof of insurance is available upon request.</p>
+              <p><strong>Can You Give Me a Quote Over the Phone?</strong> Not accurately. Every property and tree is different. An in-person visit allows us to provide a fair and accurate estimate at no charge.</p>
+              <p><strong>How Soon Can You Start?</strong> Most projects are scheduled within one to three weeks after estimate approval. Storm-related work is often scheduled sooner when possible.</p>
+              <p><strong>Do You Clean Up After The Job?</strong> Absolutely. We remove branches, wood, leaves, and other materials generated during the project so your property is left clean and presentable.</p>
+
+              <h4 style="margin-top:20px;">Get a Free Estimate — No Pressure, No Obligation</h4>
+              <p>Healthy, properly maintained trees can completely transform the appearance, safety, and value of your property. Whether you need pruning, crown thinning, storm cleanup, emergency tree work, or complete tree removal, we're happy to provide a free estimate. You can also send photos of your trees to the same number — we'll respond within a few hours.</p>
+              <p style="font-style:italic;">Making Stillwater Properties Brighter, Safer, and More Beautiful—One Tree at a Time.</p>
+              <p class="cta-line">→ Call or Text: (555) 555-5555 — Free Estimates • Honest Recommendations • Professional Tree Care</p>
+            </div>
+            <div class="variant-about" style="display:none;">
+              <h4>Who We Are</h4>
+              <p>I'm Carl Noble. I'm married to my best friend Laura, and together we're raising our family, right here in this community. This isn't just a business to me. It's the legacy I'm building for my family.</p>
+              <p>A tree takes decades to grow. It shelters the kids who climb it. It gives shade, beauty, and literally the air we breathe. That's why I don't like killing trees. It goes against my nature.</p>
+              <p>Twelve years ago, a homeowner in West Stillwater called me about a massive oak his grandfather planted in the backyard. Two other companies had told him it needed to come down. He was ready to write a check for thousands. I inspected that tree. I peeled back a bit of bark and checked the cambium. There it was: pinkish tinge, faint green, live buds. The limbs weren't rigid or hollow. I told him that the tree was thriving with life. It didn't need to come down. It needed pruning.</p>
+              <p>That oak is still standing today—healthy, strong, shading the same family that almost lost it. That homeowner saved thousands of dollars and hundreds of memories. I believe a tree shouldn't be killed unless it's absolutely necessary. And I'll look at yours with the same honesty.</p>
+              <h4 style="margin-top:20px;">What I Stand For</h4>
+              <p>I inspect every tree the same way: I check the cambium, I look at the limbs, and I tell you what I see. Pruning, removal, or nothing at all—you get an honest assessment. No pressure. No rush. Just the truth.</p>
+              <p class="cta-line">→ Call or Text: (555) 555-5555 — Free Estimates, No Pressure</p>
+            </div>
+          </div>
+          <div class="annotation">
+            Same client, two different tools: the homepage sells with a market-wide objection (fear of being oversold). The about page sells with one hyper-specific memory — a real diagnostic detail like checking cambium color does more for credibility than any adjective could.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- SAMPLE 2 -->
+    <div class="sample" data-open="false">
+      <div class="sample-head" onclick="toggleSample(this)">
+        <div class="sample-head-left">
+          <span class="label sample-tag">2 · Home Services · Bilingual EN/ES</span>
+          <h3>Reyes Roofing & Remodeling</h3>
+          <p>A family-owned roofing company homepage, told in the owner's own voice — full bilingual parity.</p>
+        </div>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="sample-body">
+        <div class="sample-inner">
+          <div class="copy-block">
+            <button class="copy-sample-btn" onclick="copySampleText(this)">Copy</button>
+            <div class="lang-toggle">
+              <button class="active" onclick="showLang(this,'en')">EN</button>
+              <button onclick="showLang(this,'es')">ES</button>
+            </div>
+            <div class="lang-en">
+              <h4>My Name Is on the Truck for a Reason.</h4>
+              <p style="font-style:italic; color:var(--ink-soft);">Reyes Roofing & Remodeling — Stillwater's Family-Owned Roofer Since 2012</p>
+              <p>I'm Ricky Reyes.</p>
+              <p>I grew up on rooftops. My dad was a roofer. By eighteen, I was beating men twice my age to the job — not because I was anything special, but because I'd been up there since I was a kid.</p>
+              <p>I spent years working for other companies. Most of them didn't put the same care into it that my dad taught me to. They cut corners, took shortcuts, and moved on to the next check.</p>
+              <p>So I started my own company with my brother Gabriel. We do it the way my dad taught us — right the first time, every time. Just a roof that's built to last.</p>
+              <p>We're locals. We live here. I drive these streets every day. When I see a roof I did five years ago still holding up, that's my satisfaction. It's not just the money. It's pride in my work. It's pride in my town.</p>
+              <p>That's why I sleep easy.</p>
+              <p style="font-style:italic; color:var(--ink-soft);">Most repairs run $300–$600. Full replacements land between $8,000 and $15,000 — you won't know your real number until we get up there and look.</p>
+
+              <h4 style="margin-top:20px;">We Start with a Conversation, Not a Contract</h4>
+              <p>We don't show up with a sales pitch. We show up with honest questions:</p>
+              <ul style="margin:0 0 14px; padding-left:22px;">
+                <li>How long have you lived here?</li>
+                <li>Has this roof ever been replaced?</li>
+                <li>What's your biggest concern right now?</li>
+              </ul>
+              <p>I'll show you what I find, give you honest options, and let you choose. No runaround. Just like my dad taught me.</p>
+              <p>And if there's a way to save you money, I'll find it.</p>
+
+              <h4 style="margin-top:20px;">What We Do</h4>
+              <p><strong>Roof Repair</strong><br>From wind-torn shingles to hidden leaks, we diagnose the problem fast and fix it before small issues turn into costly damage.</p>
+              <p><strong>Roof Replacement</strong><br>When repairs aren't enough, we install high-performance roofing systems rated for high winds and heavy hail. Good materials, put on right, so you don't have to think about it for a long time.</p>
+              <p><strong>New Roof Installation</strong><br>Asphalt shingle, standing-seam metal, or specialty systems — we install roofs that enhance curb appeal and weather resistance from day one.</p>
+              <p><strong>Hail Damage Restoration</strong><br>Oklahoma storms leave marks you can't see from the ground. We inspect, photograph, and document every bit of impact — then restore your roof to pre-storm condition or better. Not sure if a recent storm hit you? [Link to: "5 Signs Hail Damaged Your Roof" – Blog]</p>
+              <p><strong>Emergency Roof Repair</strong><br>Severe weather tears through, we mobilize fast. Tarps, patches, and temporary fixes to prevent water intrusion and further damage.</p>
+              <p><strong>Roof Maintenance Plans</strong><br>Routine inspections catch small issues early — so you don't end up replacing your roof before you have to.</p>
+
+              <h4 style="margin-top:20px;">Remodeling Services</h4>
+              <p>I learned remodeling the same way I learned roofing — from my dad, one job at a time. We don't treat it like a separate business. It's the same crew, the same standard, the same pride in craftsmanship.</p>
+              <p><strong>Kitchen Remodeling</strong><br>Custom cabinets, quartz and granite countertops, tile backsplashes, and open-concept designs — we build kitchens that fit your actual mornings.</p>
+              <p><strong>Bathroom Remodeling</strong><br>Walk-in showers, soaking tubs, custom vanities, and modern fixtures — we make bathrooms that feel like yours, not a showroom.</p>
+              <p><strong>Siding Repair & Replacement</strong><br>We restore your home's exterior with durable materials that look good and hold up to Oklahoma weather.</p>
+              <p><strong>Deck Restoration & Fence Installation</strong><br>We clean, stain, repair, and build — so your yard feels like an extension of your home, not an afterthought.</p>
+
+              <h4 style="margin-top:20px;">Why Stillwater Homeowners Choose Reyes</h4>
+              <p><strong>We're Neighbors, Not Storm-Chasers</strong><br>We live here. We drive these streets. When you call, we show up — no matter what. We're not a fly-by-night company chasing hail. We're your neighbors, and we care about this town.</p>
+              <p><strong>We Answer Our Phones</strong><br>When you call, you talk to us, not a call center. We answer, even after hours. Just a real person who can help.</p>
+              <p><strong>We Do the Insurance Paperwork</strong><br>We document everything, photograph every detail, and deal with the adjuster so you don't have to. We've helped families get claims approved that adjusters had already denied.</p>
+              <p><strong>We Stand Behind Our Work</strong><br>We use premium materials, follow manufacturer specs, and clean up like we were never there. If a leak appears within a year of our repair, we come back and fix it on our dime. That's not a warranty card. That's my name on the truck.</p>
+
+              <h4 style="margin-top:20px;">What Your Home Feels Like With a New Reyes Roof</h4>
+              <p>Most people don't realize how much a worn-out roof is costing them — until it's replaced.</p>
+              <p><strong>Quieter Inside</strong><br>Rain no longer sounds like a drumline on your ceiling. Proper underlayment and quality materials dampen noise and keep your home peaceful.</p>
+              <p><strong>Cooler in Summer</strong><br>A new roof with proper ventilation helps regulate attic temperature — meaning lower AC bills and a more comfortable home.</p>
+              <p><strong>No More Buckets</strong><br>No more pans on the floor when it storms. No more worrying every time the sky turns gray. Just a dry, protected home.</p>
+              <p><strong>Better Curb Appeal</strong><br>A new roof changes how your house looks from the street. Clean lines, consistent colors, no missing shingles. I still remember the first roof I did on Maple Street — the homeowner's wife came out and hugged me. Not because the check cleared. Because her house finally looked like a home again. That's what this work means to me.</p>
+
+              <h4 style="margin-top:20px;">Where We Work</h4>
+              <p>We know these streets because we live on them. We serve homeowners throughout central and northern Oklahoma, including: Stillwater • Perkins • Cushing • Perry • Guthrie • Edmond • Oklahoma City • Norman • Tulsa • Broken Arrow</p>
+              <p>Don't see your area? Call us. We serve all of Payne County and surrounding communities. [Link to: Stillwater Service Area Page]</p>
+              <p style="font-style:italic; color:var(--ink-soft);">Want the full checklist before we get there? [Link to: "What to Expect During a Roof Inspection" – PDF Guide]</p>
+
+              <h4 style="margin-top:20px;">Common Questions</h4>
+              <p><strong>How much does a new roof cost?</strong> Costs depend on size, pitch, materials, and complexity. We provide detailed, no-obligation estimates customized to your exact home. Most roof repairs start around $300–$600; replacements typically range from $8,000–$15,000 depending on the job.</p>
+              <p><strong>Do you handle insurance claims?</strong> Yes. We walk homeowners through the entire process — from the initial damage inspection to documenting every detail and communicating directly with your adjuster.</p>
+              <p><strong>Are you licensed and insured?</strong> Absolutely. Full licensing and comprehensive insurance. Proof is always available upon request.</p>
+              <p><strong>What roofing materials do you install?</strong> High-quality asphalt shingles, durable metal roofing, and other residential systems engineered for Oklahoma's extreme temperature swings and severe weather.</p>
+              <p><strong>Do you offer free estimates?</strong> Yes. Free, thorough inspections and estimates for all roofing, remodeling, and repair projects — with zero obligation to move forward.</p>
+
+              <h4 style="margin-top:20px;">Free Inspections — No Pressure, No Obligation</h4>
+              <p>We'll inspect your roof, assess the damage, and give you an honest recommendation. If we can save your roof, we will. If you need a replacement, we'll show you why.</p>
+              <p>Send photos of your roof or damage to the same number. We'll respond within a few hours with an honest first look — no charge, no pressure.</p>
+              <p class="cta-line">→ Call or Text: (405) 747-0099</p>
+              <p style="font-style:italic; color:var(--ink-soft); margin-top:16px;">Reyes Roofing & Remodeling — Licensed • Insured • Serving Oklahoma Homeowners Since 2012</p>
+            </div>
+            <div class="lang-es" style="display:none;">
+              <h4>Mi nombre está en la camioneta por algo.</h4>
+              <p style="font-style:italic; color:var(--ink-soft);">Reyes Roofing & Remodeling — Techos con sello familiar en Stillwater desde el 2012</p>
+              <p>Soy Ricky Reyes.</p>
+              <p>Crecí sobre techos. Mi papá era techador. A los dieciocho años, ya le ganaba el trabajo a tipos con el doble de mi edad — no porque yo fuera especial, sino porque llevaba toda la vida haciéndolo.</p>
+              <p>Trabajé años para otras empresas. La mayoría no le ponía el mismo cuidado que mi papá me enseñó a ponerle. Cortaban esquinas, tomaban atajos y apenas terminaban un trabajo, ya estaban pensando en el siguiente.</p>
+              <p>Por eso empecé mi propia empresa con mi hermano Gabriel. Hacemos las cosas como mi papá nos enseñó: bien desde la primera vez, siempre. Nada más un techo que esté hecho para durar.</p>
+              <p>Somos de aquí. Vivimos aquí. Yo manejo por estas calles todos los días. Cuando veo un techo que hice hace cinco años y sigue firme, esa es mi satisfacción. No es solo el cheque. Es el orgullo por mi trabajo. Es el orgullo por mi pueblo.</p>
+              <p>Por eso duermo tranquilo.</p>
+              <p style="font-style:italic; color:var(--ink-soft);">La mayoría de las reparaciones andan entre $300 y $600. Los reemplazos completos van entre $8,000 y $15,000 — no vas a saber tu número real hasta que subamos y lo veamos.</p>
+
+              <h4 style="margin-top:20px;">Empezamos con una plática, no con un contrato</h4>
+              <p>No llegamos con un discurso de ventas. Llegamos con preguntas honestas:</p>
+              <ul style="margin:0 0 14px; padding-left:22px;">
+                <li>¿Cuánto tiempo tiene viviendo aquí?</li>
+                <li>¿Alguna vez le han cambiado el techo a esta casa?</li>
+                <li>¿Qué es lo que más le preocupa ahorita?</li>
+              </ul>
+              <p>Le voy a enseñar lo que encuentro, le doy opciones reales y usted decide. Sin vueltas. Tal como mi papá me enseñó.</p>
+              <p>Y si hay manera de ahorrarle dinero, la voy a encontrar.</p>
+
+              <h4 style="margin-top:20px;">Lo que hacemos</h4>
+              <p><strong>Reparación de techos</strong><br>Desde tejas levantadas por el viento hasta filtraciones escondidas, diagnosticamos el problema rápido y lo arreglamos antes de que algo pequeño se convierta en un dolor de cabeza caro.</p>
+              <p><strong>Reemplazo de techo</strong><br>Cuando la reparación ya no es suficiente, instalamos sistemas de alto rendimiento diseñados para vientos fuertes y granizo. Buenos materiales, bien puestos, para no tener que volver a tocarlo en mucho rato.</p>
+              <p><strong>Instalación de techo nuevo</strong><br>Teja asfáltica, lámina metálica vertical o sistemas especiales — instalamos techos que mejoran la fachada y la resistencia al clima desde el primer día.</p>
+              <p><strong>Restauración por daños de granizo</strong><br>Las tormentas de Oklahoma dejan marcas que no se ven desde el suelo. Inspeccionamos, fotografiamos y documentamos cada impacto — y dejamos su techo como antes de la tormenta, o mejor. ¿No está seguro si una tormenta reciente le pegó? [Enlace a: "5 Señales de que el Granizo Dañó su Techo" – Blog]</p>
+              <p><strong>Reparación de emergencia</strong><br>Cuando el clima golpea duro, nos movemos rápido. Lona, parches y arreglos temporales para evitar que el agua entre y cause más daños.</p>
+              <p><strong>Planes de mantenimiento</strong><br>Inspecciones periódicas que detectan problemas pequeños antes de que crezcan — para que no le toque cambiarlo antes de tiempo.</p>
+
+              <h4 style="margin-top:20px;">Servicios de remodelación</h4>
+              <p>Aprendí a remodelar de la misma forma que aprendí a techar — de mi papá, un trabajo a la vez. No lo tratamos como un negocio aparte. Es el mismo equipo, el mismo estándar, el mismo orgullo por el trabajo bien hecho.</p>
+              <p><strong>Remodelación de cocinas</strong><br>Gavetas a la medida, encimeras de cuarzo y granito, salpicaderos de azulejo y diseños abiertos — hacemos cocinas que realmente funcionan para su día a día.</p>
+              <p><strong>Remodelación de baños</strong><br>Regaderas tipo walk-in, tinas de remojo, vanidades personalizadas y acabados modernos — hacemos baños que se sienten suyos, no de exhibición.</p>
+              <p><strong>Reparación y reemplazo de revestimiento exterior</strong><br>Restauramos el exterior de su casa con materiales duraderos que se ven bien y aguantan el clima de Oklahoma.</p>
+              <p><strong>Restauración de terrazas e instalación de cercas</strong><br>Limpiamos, manchamos, reparamos y construimos — para que su patio se sienta parte de su casa, no un espacio olvidado.</p>
+
+              <h4 style="margin-top:20px;">Por qué los dueños de casa en Stillwater eligen Reyes</h4>
+              <p><strong>Somos vecinos, no cazadores de tormentas</strong><br>Vivimos aquí. Manejamos por estas calles. Cuando nos llama, llegamos — pase lo que pase. No somos una empresa que desaparece después de una granizada. Somos sus vecinos, y nos importa este pueblo.</p>
+              <p><strong>Contestamos el teléfono</strong><br>Cuando nos llama, habla con nosotros, no con un centro de atención. Contestamos, incluso fuera de horario. Una persona real que puede ayudarle.</p>
+              <p><strong>Hacemos el papeleo del seguro</strong><br>Documentamos todo, fotografiamos cada detalle y hablamos con el ajustador para que usted no tenga que hacerlo. Hemos ayudado a familias a que les aprueben reclamaciones que ya habían sido negadas.</p>
+              <p><strong>Respondemos por nuestro trabajo</strong><br>Usamos materiales de calidad, seguimos las especificaciones del fabricante y recogemos hasta la última viruta. Si dentro de un año aparece una filtración en una reparación que hicimos, volvemos y la arreglamos sin cobrarle. Eso no es una tarjeta de garantía. Es mi nombre en la camioneta.</p>
+
+              <h4 style="margin-top:20px;">Cómo se siente su casa con un techo nuevo de Reyes</h4>
+              <p>La mayoría de la gente no se da cuenta de cuánto les está costando un techo viejo — hasta que lo cambian.</p>
+              <p><strong>Más silencio adentro</strong><br>La lluvia ya no suena como tambor en el techo. Un buen aislamiento y materiales de calidad bajan el ruido y mantienen la casa en paz.</p>
+              <p><strong>Más fresco en verano</strong><br>Un techo nuevo con buena ventilación ayuda a regular la temperatura del ático — eso significa menos gasto en aire acondicionado y una casa más cómoda.</p>
+              <p><strong>Adiós a las cubetas</strong><br>Nada de recipientes en el piso cuando llueve. Nada de preocuparse cada vez que el cielo se pone gris. Solo una casa seca y protegida.</p>
+              <p><strong>Mejor fachada</strong><br>Un techo nuevo cambia cómo se ve su casa desde la calle. Líneas limpias, colores parejos, sin tejas rotas. Todavía recuerdo el primer techo que hice en la calle Maple — la señora de la casa salió y me abrazó. No porque el cheque estuviera firmado. Porque su casa por fin volvía a parecer un hogar. Eso es lo que significa este trabajo para mí.</p>
+
+              <h4 style="margin-top:20px;">Dónde trabajamos</h4>
+              <p>Conocemos estas calles porque vivimos en ellas. Atendemos a dueños de casa en todo el centro y norte de Oklahoma, incluyendo: Stillwater • Perkins • Cushing • Perry • Guthrie • Edmond • Oklahoma City • Norman • Tulsa • Broken Arrow</p>
+              <p>¿No ve su ciudad? Llámenos. Atendemos todo el condado de Payne y comunidades cercanas. [Enlace a: Página del Área de Servicio de Stillwater]</p>
+              <p style="font-style:italic; color:var(--ink-soft);">¿Quiere la lista completa antes de que lleguemos? [Enlace a: "Qué Esperar Durante una Inspección de Techo" – Guía PDF]</p>
+
+              <h4 style="margin-top:20px;">Preguntas frecuentes</h4>
+              <p><strong>¿Cuánto cuesta un techo nuevo?</strong> Depende del tamaño, la pendiente, los materiales y la complejidad del trabajo. Damos presupuestos detallados sin compromiso, ajustados a su casa. La mayoría de las reparaciones andan entre $300 y $600; los reemplazos suelen estar entre $8,000 y $15,000, dependiendo del trabajo.</p>
+              <p><strong>¿Manejan reclamaciones al seguro?</strong> Sí. Acompañamos a los dueños de casa en todo el proceso — desde la inspección inicial hasta documentar cada detalle y hablar directamente con su ajustador.</p>
+              <p><strong>¿Están licenciados y asegurados?</strong> Completamente. Licencia vigente y seguro completo. Siempre podemos mostrarle los comprobantes si los pide.</p>
+              <p><strong>¿Qué materiales de techado instalan?</strong> Tejas asfálticas de alta calidad, techos metálicos duraderos y otros sistemas residenciales diseñados para los cambios extremos de temperatura y el clima severo de Oklahoma.</p>
+              <p><strong>¿Dan presupuestos gratis?</strong> Sí. Inspecciones y presupuestos completos y gratuitos para todos los proyectos de techado, remodelación y reparación — sin ningún compromiso.</p>
+
+              <h4 style="margin-top:20px;">Inspecciones gratis — sin presión, sin compromiso</h4>
+              <p>Inspeccionamos su techo, evaluamos los daños y le damos una recomendación honesta. Si podemos salvar su techo, lo haremos. Si necesita cambiarlo, le explicamos por qué.</p>
+              <p>Mándenos fotos de su techo o de los daños al mismo número. Le responderemos en pocas horas con una primera impresión honesta — sin cargo, sin presión.</p>
+              <p class="cta-line">→ Llame o escriba: (405) 747-0099</p>
+              <p style="font-style:italic; color:var(--ink-soft); margin-top:16px;">Reyes Roofing & Remodeling — Licenciados • Asegurados • Al servicio de los dueños de casa en Oklahoma desde el 2012</p>
+            </div>
+          </div>
+          <div class="annotation">
+            First-person ownership story, same technique as the Noble Tree Care About Us page — a real name, a real family history, and one specific memory (the Maple Street hug) doing more trust-building work than any list of credentials. Written natively in both languages, not translated — the "conversation, not a contract" structure and the Maple Street story land the same way in each.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAMPLE 3 -->
+    <div class="sample" data-open="false">
+      <div class="sample-head" onclick="toggleSample(this)">
+        <div class="sample-head-left">
+          <span class="label sample-tag">3 · Blog Post · Bilingual EN/ES</span>
+          <h3>5 Signs Hail Damaged Your Roof</h3>
+          <p>An SEO-focused blog post for Reyes Roofing, written in Ricky's voice — full bilingual parity.</p>
+        </div>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="sample-body">
+        <div class="sample-inner">
+          <div class="copy-block">
+            <button class="copy-sample-btn" onclick="copySampleText(this)">Copy</button>
+            <div class="lang-toggle">
+              <button class="active" onclick="showLang(this,'en')">EN</button>
+              <button onclick="showLang(this,'es')">ES</button>
+            </div>
+            <div class="lang-en">
+              <h4>5 Signs Hail Damaged Your Roof</h4>
+              <p>Most folks don't realize their roof is shot until they see a brown stain spreading across the bedroom ceiling. By then, that $500 repair is a $5,000 replacement.</p>
+              <p>At Reyes Roofing, we've been inspecting Stillwater roofs since 2012. We drive these streets every day — past Western Hills, around Boomer Lake, through Couch Park. We know what Oklahoma hail does to a roof. Last year alone, Payne County saw over 20 severe weather events with hail large enough to damage roofing.</p>
+              <p>Here are five signs you might have damage — and why catching it early saves you a headache.</p>
+
+              <h4 style="margin-top:20px;">1. Missing or Cracked Shingles</h4>
+              <p>Walk your property and look up — safely, from the ground. Look for bare spots, curled edges, or shingles split clean in half. If you see dark patches, your roof's underlayment is already exposed. Rain and sun will rot the deck beneath before you know it.</p>
+              <p>That dark patch is where the next rainstorm finds its way into your attic. And once water gets in, it doesn't leave quietly.</p>
+
+              <h4 style="margin-top:20px;">2. Dented Gutters and Downspouts</h4>
+              <p>Gutters take the first hit. Check your downspouts, window trim, and fascia boards. If they look like they went a few rounds with a baseball bat, your shingles took the same punishment — even if they look fine from the street. I've seen it a hundred times.</p>
+              <p>Those dents aren't cosmetic. They're a sign your roof absorbed the same force — and the damage is just hidden.</p>
+
+              <h4 style="margin-top:20px;">3. Granules in the Downspouts</h4>
+              <p>Run your hand inside your downspout or check the ground near the drain. Piles of black, sand-like grit are your shingles' protective granules washing away. Once they're gone, UV rays cook the matting underneath. Your roof starts deteriorating years before it should.</p>
+              <p>Every time it rains, a few more granules wash off. You won't notice until you see a bald spot on your roof — or worse, a leak that wasn't there last month.</p>
+
+              <h4 style="margin-top:20px;">4. Soft, Bruise-Like Marks on Shingles</h4>
+              <p>This one's harder to spot. You'll need a professional inspection to feel for soft spots beneath the shingles — they feel like a bruise on a piece of fruit. That means the hail has damaged the fiberglass mat underneath. The roof might look fine from the ground today. But the next heavy rain? That's when the trouble starts.</p>
+              <p>Picture your family eating dinner while water drips into a pot on the stove. That's what these soft spots turn into. We've seen it happen to people who thought their roof was fine.</p>
+
+              <h4 style="margin-top:20px;">5. Interior Water Stains or Peeling Paint</h4>
+              <p>Check your top-floor ceilings and attic walls. New yellow stains, bubbling paint, or peeling wallpaper mean moisture is already inside. This one's not subtle — if you're seeing it, it needs attention now. The roof has already failed.</p>
+              <p>That stain started small. It'll grow. And every time it rains, it gets a little bigger, a little darker, a little more expensive to fix.</p>
+
+              <h4 style="margin-top:20px;">Quick Hail Damage Checklist</h4>
+              <p>■ Missing or cracked shingles<br>■ Dented gutters or fascia<br>■ Granules in downspouts<br>■ Spongy or soft shingles<br>■ Water stains inside your home</p>
+              <p>If you checked even one of these boxes, don't wait.</p>
+              <p>Addressing hail damage early is far less expensive than waiting until leaks and structural problems develop.</p>
+              <p>We offer free, no-pressure inspections — and we've helped families get claims approved that adjusters had already denied. We'll look at your roof, document what we find, and handle the paperwork if you need us.</p>
+              <p class="cta-line">→ Call or text (405) 747-0099 to schedule your inspection. No pressure. Just an honest look at your roof.</p>
+              <p style="font-style:italic; color:var(--ink-soft); margin-top:16px;">Reyes Roofing & Remodeling — Stillwater's Family-Owned Roofer Since 2012</p>
+            </div>
+            <div class="lang-es" style="display:none;">
+              <h4>5 Señales de que el Granizo Dañó su Techo</h4>
+              <p>La mayoría de la gente no se da cuenta de que su techo está dañado hasta que ve una mancha marrón extendiéndose por el techo del cuarto. Para entonces, esa reparación de $500 ya se convirtió en un reemplazo de $5,000.</p>
+              <p>En Reyes Roofing, hemos estado inspeccionando techos en Stillwater desde el 2012. Recorremos estas calles todos los días — por Western Hills, alrededor de Boomer Lake, por Couch Park. Sabemos lo que el granizo de Oklahoma le hace a un techo. Solo el año pasado, el condado de Payne tuvo más de 20 tormentas severas con granizo lo suficientemente grande como para dañar techos.</p>
+              <p>Aquí hay cinco señales de que podría tener daños — y por qué detectarlas a tiempo le evita un dolor de cabeza.</p>
+
+              <h4 style="margin-top:20px;">1. Tejas Faltantes o Rajadas</h4>
+              <p>Camine por su propiedad y mire hacia arriba — con cuidado, desde el suelo. Busque áreas sin tejas, bordes levantados o tejas partidas limpiamente por la mitad. Si ve manchas oscuras, la capa inferior de su techo ya está expuesta. La lluvia y el sol van a pudrir la madera debajo antes de que se dé cuenta.</p>
+              <p>Esa mancha oscura es por donde la próxima tormenta va a encontrar su camino hacia su ático. Y una vez que el agua entra, no se va en silencio.</p>
+
+              <h4 style="margin-top:20px;">2. Canales y Bajantes Abollados</h4>
+              <p>Los canales reciben el primer golpe. Revise sus bajantes, marcos de ventanas y tableros de fascia. Si parecen que recibieron unos rounds de boxeo, sus tejas recibieron el mismo castigo — aunque se vean bien desde la calle. Lo he visto cientos de veces.</p>
+              <p>Esas abolladuras no son solo estéticas. Son una señal de que su techo absorbió la misma fuerza — y el daño solo está escondido.</p>
+
+              <h4 style="margin-top:20px;">3. Gránulos en los Bajantes</h4>
+              <p>Meta la mano dentro de su bajante o revise el suelo cerca del desagüe. Montones de arena negra, como grano fino, son los gránulos protectores de sus tejas que se están lavando. Una vez que se van, los rayos UV cocinan la capa de abajo. Su techo empieza a deteriorarse años antes de lo que debería.</p>
+              <p>Cada vez que llueve, unos gránulos más se lavan. No lo va a notar hasta que vea un punto calvo en su techo — o peor, una filtración que no estaba allí el mes pasado.</p>
+
+              <h4 style="margin-top:20px;">4. Marcas Suaves, Como Moretones, en las Tejas</h4>
+              <p>Esta es más difícil de notar. Se necesita una inspección profesional para sentir los puntos suaves debajo de las tejas — se sienten como un moretón en una fruta. Eso significa que el granizo dañó la capa de fibra de vidrio de abajo. El techo puede verse bien desde el suelo hoy. Pero la próxima lluvia fuerte? Ahí empiezan los problemas.</p>
+              <p>Imagine a su familia cenando mientras el agua gotea en una olla sobre la estufa. En eso se convierten estos puntos suaves. Lo hemos visto pasar con gente que creía que su techo estaba bien.</p>
+
+              <h4 style="margin-top:20px;">5. Manchas de Agua o Pintura Desprendida en el Interior</h4>
+              <p>Revise los techos de su último piso y las paredes del ático. Manchas amarillas nuevas, pintura con burbujas o papel tapiz despegándose significan que ya hay humedad adentro. Esto no es sutil — si lo está viendo, necesita atención ahora. El techo ya falló.</p>
+              <p>Esa mancha empezó pequeña. Va a crecer. Y cada vez que llueve, se hace un poco más grande, un poco más oscura, un poco más cara de arreglar.</p>
+
+              <h4 style="margin-top:20px;">Lista Rápida de Verificación de Daños por Granizo</h4>
+              <p>■ Tejas faltantes o rajadas<br>■ Canales o fascia abollados<br>■ Gránulos en los bajantes<br>■ Tejas esponjosas o suaves<br>■ Manchas de agua dentro de su casa</p>
+              <p>Si notó aunque sea una de estas, no espere.</p>
+              <p>Reparar el daño por granizo a tiempo es mucho más barato que esperar a que se desarrollen filtraciones y problemas estructurales.</p>
+              <p>Ofrecemos inspecciones gratis, sin presión — y hemos ayudado a familias a que les aprueben reclamaciones que los ajustadores ya habían negado. Revisamos su techo, documentamos lo que encontramos y manejamos el papeleo si nos necesita.</p>
+              <p class="cta-line">→ Llame o envíe un mensaje de texto al (405) 747-0099 para programar su inspección. Sin presión. Solo una revisión honesta de su techo.</p>
+              <p style="font-style:italic; color:var(--ink-soft); margin-top:16px;">Reyes Roofing & Remodeling — Techos con sello familiar en Stillwater desde el 2012</p>
+            </div>
+          </div>
+          <div class="annotation">
+            Same client as the Reyes Roofing site copy, and now written in the same first-person Ricky voice — "I've seen it a hundred times," "we've seen it happen to people who thought their roof was fine." Each sign closes with a short, vivid consequence (the pot on the stove, the growing stain) instead of stopping at the technical explanation — turning an SEO checklist into something someone actually reads to the end. Full bilingual parity in both languages.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- SAMPLE 4 -->
+    <div class="sample" data-open="false">
+      <div class="sample-head" onclick="toggleSample(this)">
+        <div class="sample-head-left">
+          <span class="label sample-tag">4 · Legal · Homepage</span>
+          <h3>Stillwater Injury Law Group</h3>
+          <p>Personal injury firm homepage — built to earn trust before it asks for a call.</p>
+        </div>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="sample-body">
+        <div class="sample-inner">
+          <div class="copy-block">
+            <button class="copy-sample-btn" onclick="copySampleText(this)">Copy</button>
+            <h4>Personal Injury Representation Focused on People, Not Insurance Companies</h4>
+            <p style="font-family:'JetBrains Mono', monospace; font-size:0.9rem; color:var(--ink-soft);">Stillwater Injury Law Group — Free Consultation • Available 24/7</p>
+            <p>After an accident, most people aren't thinking about lawsuits. They're wondering how they'll pay their medical bills, whether they'll miss work, and what they're supposed to say when the insurance company calls.</p>
+            <p>That's where we help. At Stillwater Injury Law Group, we help injured Oklahomans understand their options, deal with insurance companies, and pursue fair compensation without unnecessary stress or confusion.</p>
+            <p>Whether your accident happened yesterday or several weeks ago, we'll explain where you stand and what comes next.</p>
+
+            <h4 style="margin-top:20px;">Why Clients Trust Us</h4>
+            <p>Some law firms focus on finding the biggest cases. We focus on helping the people who call us. If your accident left you with medical bills, lost income, ongoing pain, or questions about what to do next, we'll take the time to listen.</p>
+            <p>Not every case involves catastrophic injuries. Not every claim is worth hundreds of thousands of dollars. That doesn't mean it doesn't matter.</p>
+            <p>If we believe we can help, we'll tell you. If we don't, we'll be honest about that too.</p>
+
+            <h4 style="margin-top:20px;">We Welcome Complex Cases</h4>
+            <p>Some cases are straightforward. Others aren't. Maybe there wasn't a police report. Maybe the fault is disputed. Maybe your injuries didn't appear until days later. Maybe the insurance company is already questioning your claim.</p>
+            <p>Those situations don't automatically mean you don't have a case. Complex cases don't scare us. They require time, investigation, and a willingness to keep digging when the answers aren't obvious. That's exactly what we're prepared to do.</p>
+
+            <h4 style="margin-top:20px;">We Deal With the Insurance Companies</h4>
+            <p>Insurance companies handle claims every day. Most people don't. Adjusters know what questions to ask, what information to request, and how to protect their company's interests. Our job is to protect yours.</p>
+            <p>When the insurance company calls, you can direct them to us. We'll handle the communication, negotiations, and paperwork so you can focus on your recovery.</p>
+
+            <h4 style="margin-top:20px;">Meet Your Attorney — Sarah Mitchell, Founding Attorney</h4>
+            <p>Before becoming an attorney, Sarah Mitchell worked as an insurance claims adjuster. She spent years seeing how claims were evaluated, negotiated, and sometimes undervalued. That experience gave her a unique perspective on how insurance companies approach accident claims.</p>
+            <p>Today, she uses that knowledge to advocate for injured clients throughout Oklahoma. For more than 12 years, Sarah has represented individuals and families dealing with the financial, physical, and emotional challenges that often follow a serious accident. Clients appreciate her straightforward advice, responsive communication, and commitment to keeping them informed throughout the process.</p>
+
+            <h4 style="margin-top:20px;">What Our Clients Say</h4>
+            <p>"I thought my case was too small to hire a lawyer. Sarah explained everything in plain English and handled the insurance company from day one." — Client Testimonial</p>
+            <p>"The insurance company offered far less than I expected. Stillwater Injury Law Group negotiated a settlement that covered my medical bills and lost wages." — Client Testimonial</p>
+
+            <h4 style="margin-top:20px;">Injured in a Car Accident? Speak With an Attorney First.</h4>
+            <p>The hours after an accident can be confusing. Insurance companies often reach out quickly, sometimes before you fully understand the extent of your injuries or the impact the accident may have on your life. What you say during those early conversations can affect your claim.</p>
+            <p>Before speaking with an insurance adjuster, consider speaking with an attorney who can explain your rights, answer your questions, and help you avoid common mistakes. A brief consultation costs nothing and may help you make better-informed decisions moving forward.</p>
+
+            <p>You don't need to gather stacks of paperwork before calling us. You don't need to understand legal terminology. You don't even need to know whether you have a case. Simply tell us what happened. We'll listen, answer your questions, and provide an honest assessment of your situation.</p>
+            <p>If we believe we can help, we'll explain your options. If we can't, we'll tell you that too. If we take your case, you pay no attorney fees unless we recover compensation on your behalf.</p>
+            <p class="cta-line">→ Free Consultation. No Fee Unless We Recover Compensation for You.</p>
+          </div>
+          <div class="annotation">
+            Opens on the reader's actual fear — bills, missed work — instead of legal positioning. Trust gets built before the sales ask ever appears, and the attorney bio does double duty: her past as a claims adjuster reframes "years of experience" into "she knows the other side's playbook."
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAMPLE 5 -->
+    <div class="sample" data-open="false">
+      <div class="sample-head" onclick="toggleSample(this)">
+        <div class="sample-head-left">
+          <span class="label sample-tag">5 · Email · Nurture Sequence</span>
+          <h3>"After the Accident" — 3-Email Sequence</h3>
+          <p>A lead-nurture sequence timed to match how doubt actually develops after a signup.</p>
+        </div>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="sample-body">
+        <div class="sample-inner">
+          <div class="copy-block">
+            <button class="copy-sample-btn" onclick="copySampleText(this)">Copy</button>
+            <h4>Email 1 — Sent 1 hour after signup</h4>
+            <p style="font-family:'JetBrains Mono', monospace; font-size:0.9rem; color:var(--ink-soft);">Subject: What the insurance company won't tell you</p>
+            <p>The first call from the insurance company often comes sooner than people expect. You're still dealing with vehicle damage, doctor's appointments, and figuring out what happens next. Then the insurance company calls.</p>
+            <p>The adjuster may sound friendly and helpful. They might tell you they just need a quick recorded statement to move the claim forward. What they may not explain is that those statements can sometimes be used later to challenge or reduce your claim.</p>
+            <p>One of the first things we tell clients is simple: let us handle the insurance company. You don't have to answer every question immediately, and you don't have to navigate the claims process alone. We handle the conversation so you don't accidentally say something that hurts your case.</p>
+            <p>If you're still deciding whether you need an attorney, that's fine. But before you pick up the phone for the insurance company, read this: [Link to: "5 Things Never to Say to an Insurance Adjuster" – PDF]</p>
+            <p>When you're ready, a free consultation costs you nothing.<br>Call or text: (555) 555-5555</p>
+            <p style="margin-top:14px;"><em>Sarah Mitchell<br>Founding Attorney</em></p>
+
+            <h4 style="margin-top:24px;">Email 2 — Sent 3 days later</h4>
+            <p style="font-family:'JetBrains Mono', monospace; font-size:0.9rem; color:var(--ink-soft);">Subject: Even "Small" Accidents Can Mean Real Money Left on the Table</p>
+            <p>One of the biggest myths we hear: "My accident wasn't that bad. Hiring a lawyer would be overkill." But here's what we see all the time: someone has minor neck pain a week after a crash. They don't see a doctor because they assume it'll go away. Two months later, they're in physical therapy. The insurance company has already closed the claim. Now they're paying out of pocket.</p>
+            <p>We're not here to scare you. We're here to help you avoid that situation. If your accident happened within the last 30 days—even if you feel okay right now—a short conversation with us costs nothing.</p>
+            <p>We'll help you understand:</p>
+            <ul style="margin:0 0 14px; padding-left:22px;">
+              <li>What symptoms are worth paying attention to</li>
+              <li>What records you should keep</li>
+              <li>Whether you may have a claim at all</li>
+            </ul>
+            <p>No pressure. No obligation. No attorney fees unless we recover compensation for you.</p>
+            <p>Ready to talk?<br>Call or text: (555) 555-5555<br>Or simply reply to this email. Sarah reads every message personally.</p>
+            <p style="margin-top:14px;"><em>Sarah Mitchell<br>Founding Attorney</em></p>
+
+            <h4 style="margin-top:24px;">Email 3 — Sent 7 days later</h4>
+            <p style="font-family:'JetBrains Mono', monospace; font-size:0.9rem; color:var(--ink-soft);">Subject: One question we get asked every week</p>
+            <p>"How long do I have to file a claim?" It's one of the most common questions we hear after an accident. Most people know there's a deadline. What they don't realize is how quickly time starts working against them.</p>
+            <p>Photos get lost. Witnesses forget details. Medical records become harder to gather. And the longer a claim drags on, the harder it can become to prove exactly what happened. In Oklahoma, most car accident claims must be filed within two years of the accident date. That may sound like plenty of time. But building a strong claim often starts long before that deadline arrives.</p>
+            <p>If your accident happened within the last 18 months, now is a good time to make sure you understand where things stand. We're offering a free, no-obligation case timeline review. We'll help you understand:</p>
+            <ul style="margin:0 0 14px; padding-left:22px;">
+              <li>Important deadlines that may apply to your situation</li>
+              <li>What documentation you should be saving</li>
+              <li>What steps may make sense moving forward</li>
+            </ul>
+            <p>We're happy to answer your questions, even if you're not ready to hire an attorney.</p>
+            <p>No pressure. No obligation.<br>Call or text: (555) 555-5555<br>Or simply reply to this email.</p>
+            <p style="margin-top:14px;"><em>Sarah Mitchell<br>Founding Attorney</em></p>
+          </div>
+          <div class="annotation">
+            Each email answers the specific doubt a reader has at that exact moment — "handle the insurer" on day one, "small accidents still cost you" on day three, "the clock is ticking" on day seven. Sequence timing does as much work as the copy itself, and every email ends with a genuinely low-friction ask (reply to this email) alongside the phone number.
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- SAMPLE 6 -->
+    <div class="sample" id="sample-deep-rubber" data-open="false">
+      <div class="sample-head" onclick="toggleSample(this)">
+        <div class="sample-head-left">
+          <span class="label sample-tag">6 · Used Tires · Spanish-Only Voice</span>
+          <h3>Deep Rubber</h3>
+          <p>A used tire shop homepage, written entirely in Spanish for the audience it actually serves — playful, warm, and no English fallback.</p>
+        </div>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="sample-body">
+        <div class="sample-inner">
+          <div class="copy-block">
+            <button class="copy-sample-btn" onclick="copySampleText(this)">Copy</button>
+            <h4>DEEP RUBBER</h4>
+            <p style="font-style:italic; color:var(--ink-soft);">Necesitas llantas. No necesitas una segunda hipoteca.</p>
+            <p>Félix Zambrano lo entiende. Tiene 7 hijos, un hermano que duerme en la oficina de atrás, y una mamá en México que todavía le marca todas las noches para preguntarle si está comiendo bien.</p>
+            <p>No está aquí para venderte lo que no necesitas. Está aquí para que tu carro funcione.</p>
+
+            <h4 style="margin-top:20px;">Lo que hacemos de verdad:</h4>
+            <p>· Vendemos llantas usadas que todavía tienen vida—no basura que encontramos en una zanja<br>· Las montamos y balanceamos mientras esperas (ve por unos tacos, te llamamos)<br>· Parches por barato. Gratis si nos compraste y han pasado menos de 3 meses.<br>· Te decimos cuándo no necesitas llantas nuevas. Aunque nos cueste la venta.</p>
+
+            <h4 style="margin-top:20px;">Por qué vuelven:</h4>
+            <p>· Félix se acuerda de tu nombre. Y de tu carro. Te pregunta por tu hijo—el que juega fútbol—porque de verdad se acuerda.<br>· Los precios están en la pared. Nada de calculadora mágica en la caja.<br>· Si una llanta no sirve, te enseña por qué. Ahí mismo. Con el dedo señalando la rajadura.<br>· "¿Inglés o español?" pregunta. "¿Llantas?" ya sabe.</p>
+
+            <h4 style="margin-top:20px;">Lo que dicen los clientes:</h4>
+            <p>"Félix me disuadió de comprar 4 llantas. Solo necesitaba 2. Pudo haberme cobrado. No lo hizo." — Carlos R.</p>
+            <p>"Mi camioneta temblaba. La arregló en 20 minutos. Me cobró $15. Le di $20 y sentí que le robé." — Tamara K.</p>
+
+            <h4 style="margin-top:20px;">¿Qué tenemos en stock?</h4>
+            <p>La verdad? Cambia diario. Nos llegan llantas usadas por oleadas—unas de intercambios, otras de flotillas, otras de gente que cambió de carro y dejó caucho bueno.</p>
+            <p>Lo mejor que puedes hacer: Llámanos o mándanos un mensaje con tu medida. Félix sale al lote, revisa lo que tiene, y te dice en el momento.</p>
+            <p>Nada de inventario en la página web. Solo un señor con una linterna y 20 años de experiencia.</p>
+
+            <h4 style="margin-top:20px;">Conoce a Félix.</h4>
+            <p>Nacido en Jalisco. Metiéndole mano a los carros desde los 14. Abrió Deep Rubber en el 2008 porque se cansó de ver a la gente pagar precios locos por caucho que apenas era mejor que usado.</p>
+            <p>Su hermano Heriberto atiende el frente. Su hijo mayor—17 años, en la prepa—monta llantas después de la escuela. Está ahorrando para su propio carro. Félix le paga por debajo del agua y le dice que es "aprendizaje".</p>
+            <p>Su mamá todavía le da consejos de negocio desde 2,000 millas de distancia. Él le manda dinero todos los viernes. Ella le manda rezos. Así funciona. A veces le reclama que no come suficiente verdura. Él le dice que sí, aunque no sea cierto.</p>
+
+            <h4 style="margin-top:20px;">Ven a vernos.</h4>
+            <p>Estamos entre el OXXO y donde estaba la taquería. (QEPD, Chuy's. Te extrañamos.) Verás las pirámides de llantas.</p>
+            <p>Lunes–Viernes: 8–6<br>Sábado: 8–4<br>Domingo: Cerrado. Día familiar. Sin excepciones.</p>
+            <p>Llama: [teléfono]<br>Manda texto: [teléfono] – respondemos más rápido<br>Llega: [dirección]</p>
+            <p class="cta-line">→ No necesitas cita. La mayoría nomás llega y ya.</p>
+          </div>
+          <div class="annotation">
+            No English fallback, no translation crutch — this is written for a Spanish-speaking audience as the primary and only audience, not as a secondary version of an English page. The humor (the missed taco stand, the mom's nightly calls, "aprendizaje" as code for under-the-table pay) is culturally specific in a way a direct translation could never land. Proof of range beyond the trust-building service-business voice used elsewhere on this site.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="rule">
+
+<section style="padding:56px 0; background:var(--paper-dim);">
+  <div class="wrap">
+    <p style="font-size:0.82rem; color:var(--ink-soft); text-align:center; max-width:640px; margin:0 auto;">This is a speculative portfolio project created to demonstrate website copywriting and brand messaging skills across audiences and languages. The businesses, testimonials, and contact information shown in every sample are fictional and used for portfolio purposes only.</p>
+  </div>
+</section>
+
+
+<section style="background:var(--navy); padding:40px 0;">
+  <div class="wrap" style="text-align:center;">
+    <span class="label" style="color:var(--gold-bright);">Let's Work Together</span>
+    <h3 style="color:var(--paper); font-size:1.5rem; margin-top:10px; max-width:34ch; margin-left:auto; margin-right:auto;">If your agency needs a writer for an upcoming project, let's talk.</h3>
+    <a class="btn btn-primary" style="background:var(--gold); color:var(--navy); margin-top:22px; display:inline-block;" href="#contact">Contact Me</a>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="section" id="process">
+  <div class="wrap">
+    <div class="section-head"><span class="label">02 — How It Works</span></div>
+    <h2 style="margin-bottom:44px;">No guessing what hiring me looks like.</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="label">Step 1</span>
+        <h3>Send the Brief</h3>
+        <p>Tell me what you need — a page, an email sequence, a full site. No formal brief required, a rough outline works fine.</p>
+      </div>
+      <div class="service-card">
+        <span class="label">Step 2</span>
+        <h3>I Ask Questions</h3>
+        <p>I'll ask what you're stuck on and what the client actually needs, so the first draft isn't a guess.</p>
+      </div>
+      <div class="service-card">
+        <span class="label">Step 3</span>
+        <h3>Draft, Then Revise</h3>
+        <p>First draft within 5 business days of our kickoff call. You get a structured, ready-to-build draft, plus one round of revisions included to get it right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<hr class="rule">
+
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="section-head"><span class="label">04 — FAQ</span></div>
+    <h2 style="margin-bottom:44px;">Questions agencies actually ask.</h2>
+    <div style="max-width:720px;">
+      <div style="border-top:1px solid var(--rule); padding:22px 0;">
+        <h3 style="font-size:1.1rem; margin-bottom:8px;">Do you work with agencies outside Oklahoma?</h3>
+        <p style="color:var(--ink-soft); margin:0;">Yes — I work with agencies all over the world. Everything is handled over email and call, same as any remote writer.</p>
+      </div>
+      <div style="border-top:1px solid var(--rule); padding:22px 0;">
+        <h3 style="font-size:1.1rem; margin-bottom:8px;">How do you handle bilingual projects?</h3>
+        <p style="color:var(--ink-soft); margin:0;">I write both languages natively, not as a translation pass. The Spanish version is written to persuade on its own terms — same voice, same structure, adapted where a direct translation would sound stiff.</p>
+      </div>
+      <div style="border-top:1px solid var(--rule); padding:22px 0;">
+        <h3 style="font-size:1.1rem; margin-bottom:8px;">What's your revision policy?</h3>
+        <p style="color:var(--ink-soft); margin:0;">One round of revisions is included with every project. If something needs a bigger rework than that, we'll talk about it before any extra work starts — no surprise charges.</p>
+      </div>
+      <div style="border-top:1px solid var(--rule); padding:22px 0;">
+        <h3 style="font-size:1.1rem; margin-bottom:8px;">Can you match our client's voice?</h3>
+        <p style="color:var(--ink-soft); margin:0;">That's the job. I record calls with your client and pull the specifics from how they actually talk — the phrases they use, what they emphasize, what they'd never say — and write from that, not a generic template.</p>
+      </div>
+      <div style="border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:22px 0;">
+        <h3 style="font-size:1.1rem; margin-bottom:8px;">What do you need from us to get started?</h3>
+        <p style="color:var(--ink-soft); margin:0;">A rough outline of the project and a short call. No formal creative brief required — I'll ask the questions I need answered.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <span class="label">05 — Get In Touch</span>
+    <h2>Have a client that needs copy?</h2>
+    <p>I work with design agencies as the writer they send that project to — one-off or ongoing. Send over a brief, or just say hello.</p>
+    <div class="contact-links">
+      <a class="btn btn-primary" href="mailto:angelwritescontent@gmail.com">Email Me</a>
+      <button class="btn btn-ghost" onclick="copyEmail(this)" style="cursor:pointer; font-family:'JetBrains Mono', monospace;" id="copy-email-btn">angelwritescontent@gmail.com</button>
+    </div>
+    <div class="footer-bottom">
+      <span>Angel Sterling — Freelance Copywriter</span>
+    </div>
+  </div>
+</footer>
+
+<div id="about-modal-overlay" style="display:none; position:fixed; inset:0; background:rgba(28,35,51,0.7); z-index:100; padding:24px;" onclick="if(event.target===this) closeAboutModal()" role="dialog" aria-modal="true" aria-labelledby="about-modal-title">
+  <div id="about-modal-box" style="max-width:640px; margin:40px auto; background:var(--paper); border-radius:2px; max-height:85vh; overflow-y:auto; position:relative; padding:40px 36px;" tabindex="-1">
+    <button id="about-modal-close" onclick="closeAboutModal()" aria-label="Close" style="position:absolute; top:10px; right:10px; background:none; border:none; font-size:1.6rem; color:var(--ink-soft); cursor:pointer; line-height:1; width:44px; height:44px;">&times;</button>
+    <img src="data:image/png;base64,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" alt="Angel Sterling" style="width:100px; height:100px; border-radius:50%; object-fit:cover; float:right; margin-left:18px; border:2px solid var(--gold);">
+    <span class="label" id="about-modal-title">About Angel</span>
+    <p style="margin-top:18px;">I'm Angel Sterling. Here's a little about me.</p>
+    <p>At 14, I started painting houses. Not because I loved painting — but because I saw people needed work done and I figured I could do it better than whoever else they'd find.</p>
+    <p>From there, I sold used cars. Learned fast that the sale happened in the questions, not the pitch. I sold siding and windows door-to-door in the heat. And the cold. I learned that selling isn't about talking — it's about listening to what someone actually says. That tells you what they need.</p>
+    <p>I'm married to Laura. She grew up in Mérida, Mexico. She still corrects my Spanish. She keeps me honest.</p>
+    <p>We have two young daughters, 5 and 3. They're the reason you're reading this page.</p>
+    <p>Somewhere along the way I found I could write, and I liked it. So now I write in English and Spanish. Not one translated from the other — both written to stand on their own.</p>
+    <p>I usually deliver on Fridays. If I don't, you'll know why by Thursday.</p>
+    <p>Tell me what you need. I'll write it.</p>
+  </div>
+</div>
+
+<script>
+  function copySampleText(btn){
+    const block = btn.closest('.copy-block');
+    // Clone so we can strip the button itself and any hidden language variant before reading text
+    const clone = block.cloneNode(true);
+    const btnInClone = clone.querySelector('.copy-sample-btn');
+    if(btnInClone) btnInClone.remove();
+    clone.querySelectorAll('[style*="display:none"], [style*="display: none"]').forEach(el => el.remove());
+    const text = clone.innerText.trim();
+    navigator.clipboard.writeText(text).then(function(){
+      const original = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(function(){ btn.textContent = original; }, 1800);
+    }).catch(function(){
+      console.error('Copy failed');
+    });
+  }
+  function copyEmail(btn){
+    const email = 'angelwritescontent@gmail.com';
+    navigator.clipboard.writeText(email).then(function(){
+      const original = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(function(){ btn.textContent = original; }, 1800);
+    }).catch(function(){
+      const original = btn.textContent;
+      btn.textContent = email;
+    });
+  }
+  function getFocusable(container){
+    return Array.from(container.querySelectorAll('a[href], button, [tabindex]:not([tabindex="-1"])'))
+      .filter(el => !el.disabled && el.offsetParent !== null);
+  }
+  function trapFocus(e){
+    const box = document.getElementById('about-modal-box');
+    if(e.key === 'Escape'){
+      closeAboutModal();
+      return;
+    }
+    if(e.key !== 'Tab') return;
+    const focusable = getFocusable(box);
+    if(focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if(e.shiftKey && document.activeElement === first){
+      e.preventDefault();
+      last.focus();
+    } else if(!e.shiftKey && document.activeElement === last){
+      e.preventDefault();
+      first.focus();
+    }
+  }
+  function openAboutModal(e){
+    if(e) e.preventDefault();
+    document.getElementById('about-modal-overlay').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', trapFocus);
+    const box = document.getElementById('about-modal-box');
+    box.focus();
+  }
+  function closeAboutModal(){
+    document.getElementById('about-modal-overlay').style.display = 'none';
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', trapFocus);
+    const trigger = document.getElementById('about-modal-trigger');
+    if(trigger) trigger.focus();
+  }
+  function jumpToDeepRubber(e){
+    e.preventDefault();
+    const sample = document.getElementById('sample-deep-rubber');
+    if(!sample) return;
+    if(sample.getAttribute('data-open') !== 'true'){
+      const head = sample.querySelector('.sample-head');
+      toggleSample(head);
+      setTimeout(function(){
+        sample.scrollIntoView({behavior:'smooth', block:'start'});
+      }, 420);
+    } else {
+      sample.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.sample[data-open="true"]').forEach(function(sample){
+      const body = sample.querySelector('.sample-body');
+      body.style.maxHeight = body.scrollHeight + 'px';
+    });
+  });
+  function toggleSample(headEl){
+    const sample = headEl.parentElement;
+    const body = sample.querySelector('.sample-body');
+    const isOpen = sample.getAttribute('data-open') === 'true';
+    if(isOpen){
+      body.style.maxHeight = null;
+      sample.setAttribute('data-open','false');
+    } else {
+      sample.setAttribute('data-open','true');
+      body.style.maxHeight = body.scrollHeight + 'px';
+    }
+  }
+  function showVariant(btn, variant){
+    const block = btn.closest('.copy-block');
+    block.querySelectorAll('.lang-toggle button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    block.querySelector('.variant-home').style.display = variant === 'home' ? 'block' : 'none';
+    block.querySelector('.variant-about').style.display = variant === 'about' ? 'block' : 'none';
+    const sample = block.closest('.sample');
+    if(sample.getAttribute('data-open') === 'true'){
+      const body = sample.querySelector('.sample-body');
+      body.style.maxHeight = body.scrollHeight + 'px';
+    }
+  }
+  function showLang(btn, lang){
+    const block = btn.closest('.copy-block');
+    block.querySelectorAll('.lang-toggle button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    block.querySelector('.lang-en').style.display = lang === 'en' ? 'block' : 'none';
+    block.querySelector('.lang-es').style.display = lang === 'es' ? 'block' : 'none';
+    // recalc height if this sample is open
+    const sample = block.closest('.sample');
+    if(sample.getAttribute('data-open') === 'true'){
+      const body = sample.querySelector('.sample-body');
+      body.style.maxHeight = body.scrollHeight + 'px';
+    }
+  }
+</script>
+
+</body>
+</html>
